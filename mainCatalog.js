@@ -7,10 +7,11 @@ export class Getmedia
     static #listnum = 1;
     static #prevcat = 0;
 
-    constructor(category)
+    constructor(category, refresh)
     {
         this.category = category;
         this.init = this.init.bind(this);
+        this.refresh = refresh
     }
 
     async #changepage(num)
@@ -27,10 +28,10 @@ export class Getmedia
             Getmedia.#page.once('load', () => console.info('✅ Page is loaded'));
         }
 
-        if (Getmedia.#prevcat !== this.category)
-        {
+        if (Getmedia.#prevcat !== this.category || this.refresh)
             Getmedia.#listnum = 1;
-        }
+
+
         await this.#changepage(Getmedia.#listnum);
         await Getmedia.#page.setViewport({ width: 1920, height: 1080 });
 

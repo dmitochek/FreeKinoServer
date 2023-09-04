@@ -12,7 +12,10 @@
   "type": "module",
   "dependencies": {
     "@apollo/server": "^4.9.0",
+    "apollo-datasource-mongodb": "^0.5.4",
     "graphql": "^16.7.1",
-    "puppeteer": "^21.0.1"
+    "mongodb": "^5.8.0",
+    "puppeteer": "^21.0.1",
+    "xmlhttprequest": "^1.8.0"
   }
 }
